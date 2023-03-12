@@ -1,62 +1,57 @@
-# Prerequisites
-*.d
+bin
+obj
+csx
+.vs
+edge
+Publish
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
 
-# Linker output
-*.ilk
-*.map
-*.exp
+/packages
+/TestResults
 
-# Precompiled Headers
-*.gch
-*.pch
+/tools/NuGet.exe
+/App_Data
+/secrets
+# /data
+.secrets
+appsettings.json
+local.settings.json
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+node_modules
+dist
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Local python packages
+.python_packages/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
 
-#Ignore data files
-*.tbl
-*.tbl.csv
-*.csv
+# tests/
+local/
+.vscode
 
-perf_query_gen/
-tpch-dbgen/
-tags
+data/
+query_root/perf_query_gen/
 results/
+tpch-dbgen/

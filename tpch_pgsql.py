@@ -121,7 +121,6 @@ def main(phase, host, port, user, password, database,
         result = r.Result("Load")
         if load.clean_database(query_root, host, port, database, user, password, TABLES):
             print("could not clean the database.")
-            exit(1)
         print("cleaned database %s" % database)
         result.startTimer()
         if load.create_schema(query_root, host, port, database, user, password, PREP_QUERY_DIR):
