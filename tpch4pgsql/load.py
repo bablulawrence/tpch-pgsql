@@ -22,7 +22,7 @@ def clean_database(query_root, host, port, db_name, user, password, tables):
         conn = pgdb.PGDB(host, port, db_name, user, password)
         try:
             for table in tables:
-                conn.executeQuery("DROP TABLE IF EXISTS \"%s\" " % table)
+                conn.executeQuery("DROP TABLE IF EXISTS \"%s\" " % table.lower())
         except Exception as e:
             print("unable to remove existing tables. %s" % e)
             return 1
@@ -88,7 +88,7 @@ def load_tables(data_dir, host, port, db_name, user, password, tables, load_dir)
             for table in tables:
                 print(table)
                 filepath = os.path.join(data_dir, load_dir, table.lower() + ".tbl.csv")
-                conn.copyFrom(filepath, separator="|", table=table)
+                conn.copyFrom(filepath, separator="|", table=table.lower())
             conn.commit()
         except Exception as e:
             print("unable to run load tables. %s" %e)
